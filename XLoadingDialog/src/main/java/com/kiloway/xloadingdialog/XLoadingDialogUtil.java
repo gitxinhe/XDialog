@@ -22,10 +22,10 @@ public class XLoadingDialogUtil {
             loadingDailog = null;
         }
     }
-    public void setDialogContent(String content){
+    public static void setDialogContent(String content){
         if (loadingDailog != null && loadingDailog.isShowing()) {
             if (loadBuilder!=null){
-                loadBuilder.setMessage(content);
+                loadBuilder.setAppendMessage(content);
             }
         }
     }
