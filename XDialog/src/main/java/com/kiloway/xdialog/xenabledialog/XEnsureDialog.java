@@ -23,15 +23,11 @@ import com.kiloway.xdialog.R;
 import com.kiloway.xdialog.xloadingdialog.XLoadingDialog;
 
 public class XEnsureDialog extends Dialog {
-    private Display display;
     private Context context;
     private TextView mTvTitle;
     private TextView mTvMsg;
     private TextView mTvSure;
     private TextView mTvCancel;
-    private Dialog dialog;
-    private Window dialogWindow;
-    private LinearLayout mLinearBottom;
     private FrameLayout flCustom;
     private View mView;
     //text
@@ -58,7 +54,6 @@ public class XEnsureDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_ensure_layout);
-        mLinearBottom = ((LinearLayout) findViewById(R.id.linear_bottom));
         mTvTitle = ((TextView) findViewById(R.id.tv_title));
         mTvMsg = ((TextView) findViewById(R.id.tv_msg));
         mTvSure = ((TextView) findViewById(R.id.tv_sure));
@@ -127,7 +122,6 @@ public class XEnsureDialog extends Dialog {
         Display display = windowManager.getDefaultDisplay();
         dialogWindow.getDecorView().setPadding(0, 0, 0, 0);
         dialogWindow.setGravity(Gravity.CENTER);
-        dialogWindow.getDecorView().setPadding(0, 0, 0, 0);
         WindowManager.LayoutParams params = dialogWindow.getAttributes();
         params.width = mDialog.dialogWidth == 0 ? (int) (display.getWidth() * 0.8) : (int) (display.getWidth() * mDialog.dialogWidth);
         params.height = mDialog.dialogHeight == 0 ? WindowManager.LayoutParams.WRAP_CONTENT : (int) (display.getHeight() * mDialog.dialogHeight);

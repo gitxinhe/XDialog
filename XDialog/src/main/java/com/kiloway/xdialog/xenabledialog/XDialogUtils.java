@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.kiloway.xdialog.R;
 
 public class XDialogUtils {
-    public static void showSureDialog(final Context context, String title, String content){
+    public static void showSureDialog(final Context context, String title, String content,boolean showCancel){
         XEnsureDialog ensureDialog = new XEnsureDialog.Builder(context)
                 .setMessage(content)
                 .setTitle(title)
@@ -19,7 +19,7 @@ public class XDialogUtils {
                 .setNegativeTextColor(context.getResources().getColor(R.color.black))
                 .setPositiveTextColor(context.getResources().getColor(R.color.black))
                 .setTitleColor(context.getResources().getColor(R.color.black))
-                .setNegativeShow(false)
+                .setNegativeShow(showCancel)
                 .setNegativeClick(new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
